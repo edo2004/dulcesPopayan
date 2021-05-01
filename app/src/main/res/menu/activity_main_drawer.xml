@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/home"
+            android:title="Home" />
+
+        <item
+            android:id="@+id/nav_sesion"
+            android:icon="@drawable/login"
+            android:title="Iniciar sesion" />
+        <item
+            android:id="@+id/nav_dulcerias"
+            android:icon="@drawable/login"
+            android:title="Dulcerias" />
+
+        <item
+            android:id="@+id/registro"
+            android:icon="@drawable/edit"
+            android:title="Registrarse" />
+
+    </group>
+
+    <item android:title="Contactenos">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/nav_Nosotros"
+                    android:icon="@drawable/home"
+                    android:title="Nosotros" />
+
+                <item
+                    android:id="@+id/Conactenos"
+                    android:icon="@drawable/phonecall"
+                    android:title="Contactenos" />
+
+            </group>
+        </menu>
+
+
+    </item>
+</menu>
