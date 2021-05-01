@@ -22,4 +22,5 @@
         android:name="unicauca.edu.co.dulcespopayan.ui.slideshow.SlideshowFragment"
         android:label="@string/menu_slideshow"
         tools:layout="@layout/fragment_slideshow" />
+
 </navigation>
