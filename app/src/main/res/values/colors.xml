@@ -11,4 +11,6 @@
     <color name="gray1">#605D5D</color>
     <color name="gray">#424040</color>
     <color name="sesion">#9AFFFFFF</color>
+    <color name="backgroundcard">#D7D4D4</color>
+    <color name="backgroundapp">#ECCDC2</color>
 </resources>
