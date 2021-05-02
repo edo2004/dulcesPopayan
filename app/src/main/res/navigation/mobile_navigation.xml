@@ -10,17 +10,15 @@
         android:name="unicauca.edu.co.dulcespopayan.ui.home.HomeFragment"
         android:label="@string/menu_home"
         tools:layout="@layout/fragment_home" />
-
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="unicauca.edu.co.dulcespopayan.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
-
+        android:id="@+id/nav_sesion"
+        android:name="unicauca.edu.co.dulcespopayan.nav_sesion"
+        android:label="Iniciar sesion"
+        tools:layout="@layout/fragment_sesion" />
     <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="unicauca.edu.co.dulcespopayan.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        android:id="@+id/nav_register"
+        android:name="unicauca.edu.co.dulcespopayan.nav_register"
+        android:label="Registrarse"
+        tools:layout="@layout/fragment_register" />
 
 </navigation>
