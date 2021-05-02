@@ -20,5 +20,15 @@
         android:name="unicauca.edu.co.dulcespopayan.nav_register"
         android:label="Registrarse"
         tools:layout="@layout/fragment_register" />
+    <fragment
+        android:id="@+id/nav_dulces"
+        android:name="unicauca.edu.co.dulcespopayan.nav_dulces"
+        android:label="Dulces"
+        tools:layout="@layout/fragment_dulces" />
+    <fragment
+        android:id="@+id/nav_rutas"
+        android:name="unicauca.edu.co.dulcespopayan.nav_rutas"
+        android:label="fragment_rutas"
+        tools:layout="@layout/fragment_rutas" />
 
 </navigation>
