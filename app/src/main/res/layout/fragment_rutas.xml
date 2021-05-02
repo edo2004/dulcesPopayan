@@ -25,48 +25,81 @@
         android:layout_marginLeft="32dp"
         android:layout_marginRight="32dp"
         android:orientation="horizontal"
+        android:background="@color/white"
         app:layout_constraintTop_toBottomOf="@+id/imageView"
         tools:layout_editor_absoluteX="0dp">
 
 
-        <Button
-            android:id="@+id/button3"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@color/white"
-            android:fontFamily="sans-serif-light"
-            android:text="Iglesias"
-            android:textColor="@color/black"
-            android:textStyle="bold"
-            android:textSize="12sp"
-            app:backgroundTint="@null" />
+            android:background="@drawable/custom_rutas">
 
-        <Button
-            android:id="@+id/button4"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_weight="1"
-            android:background="@color/white"
-            android:fontFamily="sans-serif-light"
-            android:text="Historia"
-            android:textColor="@color/black"
-            android:textStyle="bold"
-            android:textSize="12sp"
-            app:backgroundTint="@null" />
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:src="@drawable/iglesia"
+                android:paddingTop="5dp"
+                android:paddingLeft="5dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Iglesias"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:padding="10dp"
+                android:textStyle="bold" />
+        </LinearLayout>
 
-        <Button
-            android:id="@+id/button5"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.99"
+            android:background="@drawable/custom_rutas">
+
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:src="@drawable/museo"
+                android:paddingTop="5dp"
+                android:paddingLeft="5dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Historia"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:padding="10dp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@color/white"
-            android:fontFamily="sans-serif-light"
-            android:text="Arte"
-            android:textColor="@color/black"
-            android:textStyle="bold"
-            android:textSize="12sp"
-            app:backgroundTint="@null" />
+            android:background="@drawable/custom_rutas">
+
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:src="@drawable/arte"
+                android:paddingTop="5dp"
+                android:paddingLeft="5dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Arte"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:padding="10dp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+
+
+
+
 
     </LinearLayout>
 
