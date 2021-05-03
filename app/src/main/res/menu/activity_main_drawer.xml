@@ -19,7 +19,7 @@
             android:icon="@drawable/edit"
             android:title="Registrarse" />
         <item
-            android:id="@+id/nav_dulcerias"
+            android:id="@+id/nav_dulces"
             android:icon="@drawable/login"
             android:title="Dulcerias" />
 

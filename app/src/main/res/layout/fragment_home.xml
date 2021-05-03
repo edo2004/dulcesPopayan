@@ -44,6 +44,7 @@
         android:layout_width="200dp"
         android:layout_height="68dp"
         android:background="@drawable/custom_botton"
+        android:onClick="Onclick"
         android:text="@string/button"
         android:textAllCaps="false"
         android:textColor="@color/white"
@@ -52,7 +53,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_home" />
+        app:layout_constraintTop_toBottomOf="@+id/text_home"
+        tools:ignore="OnClick" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

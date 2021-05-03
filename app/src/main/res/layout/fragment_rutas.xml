@@ -6,13 +6,13 @@
     android:layout_height="match_parent"
     android:background="@drawable/popayan"
     android:orientation="vertical"
-    tools:context=".nav_dulces">
+    tools:context=".nav_rutas">
 
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
         android:src="@drawable/dulcespopa"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -20,12 +20,13 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
+        android:id="@+id/layoutSitios"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_marginLeft="32dp"
         android:layout_marginRight="32dp"
-        android:orientation="horizontal"
         android:background="@color/white"
+        android:orientation="horizontal"
         app:layout_constraintTop_toBottomOf="@+id/imageView"
         tools:layout_editor_absoluteX="0dp">
 
@@ -39,16 +40,17 @@
             <ImageView
                 android:layout_width="35dp"
                 android:layout_height="35dp"
-                android:src="@drawable/iglesia"
+                android:paddingLeft="5dp"
                 android:paddingTop="5dp"
-                android:paddingLeft="5dp"/>
+                android:src="@drawable/iglesia" />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="Iglesias"
-                android:textSize="16sp"
-                android:textColor="@color/black"
                 android:padding="10dp"
+                android:text="Iglesias"
+                android:textColor="@color/black"
+                android:textSize="16sp"
                 android:textStyle="bold" />
         </LinearLayout>
 
@@ -61,16 +63,17 @@
             <ImageView
                 android:layout_width="35dp"
                 android:layout_height="35dp"
-                android:src="@drawable/museo"
+                android:paddingLeft="5dp"
                 android:paddingTop="5dp"
-                android:paddingLeft="5dp"/>
+                android:src="@drawable/museo" />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="Historia"
-                android:textSize="16sp"
-                android:textColor="@color/black"
                 android:padding="10dp"
+                android:text="Historia"
+                android:textColor="@color/black"
+                android:textSize="16sp"
                 android:textStyle="bold" />
         </LinearLayout>
 
@@ -83,25 +86,56 @@
             <ImageView
                 android:layout_width="35dp"
                 android:layout_height="35dp"
-                android:src="@drawable/arte"
+                android:paddingLeft="5dp"
                 android:paddingTop="5dp"
-                android:paddingLeft="5dp"/>
+                android:src="@drawable/arte" />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="Arte"
-                android:textSize="16sp"
-                android:textColor="@color/black"
                 android:padding="10dp"
+                android:text="Arte"
+                android:textColor="@color/black"
+                android:textSize="16sp"
                 android:textStyle="bold" />
         </LinearLayout>
 
-
-
-
-
-
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/ooo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ó"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layoutSitios" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:background="@color/ubicacion"
+        android:fontFamily="sans-serif-light"
+        android:onClick="OnClick"
+        android:text="@string/ubucacion"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:backgroundTint="@null"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ooo"
+        tools:ignore="OnClick" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
