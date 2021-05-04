@@ -34,7 +34,7 @@
                     android:title="Nosotros" />
 
                 <item
-                    android:id="@+id/Conactenos"
+                    android:id="@+id/nav_rutas"
                     android:icon="@drawable/phonecall"
                     android:title="Contactenos" />
 
