@@ -8,9 +8,6 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -18,12 +15,20 @@ import androidx.navigation.ui.NavigationUI;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
-import unicauca.edu.co.dulcespopayan.ui.home.HomeFragment;
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
+    ArrayList<listDulces> listDulcesArrayList;
+    RecyclerView recyclerView;
+
+    /*private RecyclerView recyclerView;
+    private adapterCard adapterCard;
+    private List<listDulces> items;*/
 
 
     @Override
@@ -45,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_sesion, R.id.nav_register, R.id.nav_dulces)
+                R.id.nav_home, R.id.nav_sesion, R.id.nav_register, R.id.nav_dulces,R.id.mapsFragment1)
                 .setDrawerLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
@@ -56,6 +61,50 @@ public class MainActivity extends AppCompatActivity {
         FragmentManager fragmentManager = getSupportFragmentManager();
 
         fragmentManager.beginTransaction().add(R.id.content,homeFragment).commit();*/
+
+        listDulcesArrayList = new ArrayList<>();
+        recyclerView = (RecyclerView) findViewById(R.id.recyclerDulces);
+
+        llenarDulces();
+        adapterCard adapter = new adapterCard(listDulcesArrayList);
+        recyclerView.setAdapter(adapter);
+/*
+        dulcesList();
+        dulcesValues();*/
+
+
+
+
+    }
+
+ /*   private void dulcesList (){
+        recyclerView = findViewById(R.id.recyclerDulces);
+    }
+
+    private void dulcesValues (){
+        LinearLayoutManager manager = new LinearLayoutManager(this);
+        recyclerView.setLayoutManager(manager);
+
+        items = getItems();
+        adapterCard = new adapterCard(items);
+        recyclerView.setAdapter(adapterCard);
+    }
+
+    private List<listDulces> getItems(){
+        List<listDulces> itemsList = new ArrayList<>();
+        itemsList.add(new listDulces("Manjar blanco", "Estas son las mejores de popayan", R.drawable.iglesia));
+        itemsList.add(new listDulces("Manjar blanco", "Estas son las mejores de popayan", R.drawable.iglesia));
+
+        return itemsList;
+    }*/
+
+
+    private void llenarDulces() {
+
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        listDulcesArrayList.add(new listDulces("Repollitas", "Estas son las mejores de popayan", R.drawable.arte));
+        listDulcesArrayList.add(new listDulces("Manjar blanco", "Estas son las mejores de popayan", R.drawable.iglesia));
+        listDulcesArrayList.add(new listDulces("Tamales", "Estas son las mejores de popayan", R.drawable.museo));
 
     }
 
@@ -78,3 +127,5 @@ public class MainActivity extends AppCompatActivity {
 
     }
 }
+
+

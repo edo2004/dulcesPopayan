@@ -17,6 +17,7 @@
         android:fontFamily="sans-serif"
         android:text="Guía Dulces Popayán"
         android:textSize="20sp"
+        android:textColor="@color/black"
 
         />
     <TextView
@@ -24,6 +25,7 @@
         android:layout_height="wrap_content"
         android:text="dulcespopayan.com"
         android:textSize="14sp"
+        android:textColor="@color/black"
         />
 
 </LinearLayout>

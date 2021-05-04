@@ -59,6 +59,7 @@ public class nav_dulces extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_dulces, container, false);
+        View viewReturn = inflater.inflate(R.layout.fragment_dulces, container, false);
+        return viewReturn;
     }
 }

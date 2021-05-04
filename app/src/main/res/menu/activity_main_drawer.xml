@@ -29,7 +29,7 @@
         <menu>
             <group android:checkableBehavior="single">
                 <item
-                    android:id="@+id/nav_Nosotros"
+                    android:id="@+id/mapsFragment1"
                     android:icon="@drawable/home"
                     android:title="Nosotros" />
 
