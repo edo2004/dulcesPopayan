@@ -3,10 +3,17 @@ package unicauca.edu.co.dulcespopayan;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import unicauca.edu.co.dulcespopayan.adapter.adapterCard;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -14,6 +21,10 @@ import android.view.ViewGroup;
  * create an instance of this fragment.
  */
 public class nav_dulces extends Fragment {
+
+    private adapterCard adaptercard;
+    private RecyclerView recyclerView;
+    private List<listDulces> items;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -53,13 +64,36 @@ public class nav_dulces extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
+
     }
+
+
+
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View viewReturn = inflater.inflate(R.layout.fragment_dulces, container, false);
-        return viewReturn;
+        View view = inflater.inflate(R.layout.fragment_dulces, container, false);
+
+        recyclerView = view.findViewById(R.id.recyclerDulces);
+        recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
+
+        items = getItems();
+        adaptercard = new adapterCard(items);
+        recyclerView.setAdapter(adaptercard);
+        return view;
+    }
+
+    private List<listDulces> getItems(){
+        List<listDulces> itemsList = new ArrayList<>();
+        itemsList.add(new listDulces("Manjar blanco", "Estas son las mejores de popayan", R.drawable.iglesia));
+        itemsList.add(new listDulces("Repollitas", "Estas son las mejores de popayan", R.drawable.arte));
+        itemsList.add(new listDulces("Tamales", "Estas son las mejores de popayan", R.drawable.museo));
+        itemsList.add(new listDulces("Agua", "Estas son las mejores de popayan", R.drawable.popayan));
+
+        return itemsList;
     }
 }

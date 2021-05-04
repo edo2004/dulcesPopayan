@@ -34,9 +34,8 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View v) {
 
-                nav_rutas navrutas = new nav_rutas();
-                FragmentTransaction transaction = getFragmentManager().beginTransaction();
-                transaction.replace(R.id.content,navrutas);
+                FragmentTransaction transaction = getChildFragmentManager().beginTransaction();
+                transaction.replace(R.id.content,nav_rutas.class,null);
                 transaction.addToBackStack(null);
                 transaction.commit();
 
