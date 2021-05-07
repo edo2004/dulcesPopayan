@@ -2,18 +2,43 @@ package unicauca.edu.co.dulcespopayan;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
+import android.widget.Toast;
+
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.MapView;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
+
+import java.io.Console;
+
+import unicauca.edu.co.dulcespopayan.ui.home.HomeFragment;
 
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link nav_rutas#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class nav_rutas extends Fragment {
+public class nav_rutas extends Fragment implements OnMapReadyCallback {
+
+/*
+    FragmentTransaction transaction;
+    Fragment MapsFragent1, homeFragment;*/
+
+    private GoogleMap mMap;
+    LinearLayout iglesias;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -53,13 +78,77 @@ public class nav_rutas extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+/*
+        MapsFragent1 = new MapsFragment1();
+        homeFragment = new HomeFragment();
+
+        getSuportFragmentManager().beginTransaction().add(R.id.contRutas, MapsFragent1).commit();*/
     }
+/*
+    private FragmentManager getSuportFragmentManager() {
+        return null;
+    }*/
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_rutas, container, false);
+        View v = inflater.inflate(R.layout.fragment_rutas, container, false);
+
+        iglesias = v.findViewById(R.id.iglesias);
+        iglesias.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                System.out.println("Holalalala");
+                Toast.makeText(getActivity(), "Hola soy un Toast", Toast.LENGTH_SHORT).show();
+
+
+            }
+        });
+        return v;
     }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+
+        super.onViewCreated(view, savedInstanceState);
+        SupportMapFragment mapFragment = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.contRutas);
+        mapFragment.getMapAsync(this);
+
+
+  /*
+        MapView mapView = (MapView) view.findViewById(R.id.map);
+        mapView.onCreate(savedInstanceState);
+        mapView.onResume();
+        mapView.getMapAsync(this);*/
+    }
+
+    @Override
+    public void onMapReady(GoogleMap googleMap) {
+        mMap = googleMap;
+
+        // Add a marker in Sydney and move the camera
+        LatLng popayan = new LatLng(2.4416676728872915, -76.60632218499379);
+        mMap.addMarker(new MarkerOptions()
+                .position(popayan)
+                .title("Marker in Sydney"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(popayan,13));
+    }
+
+
+
+/*    public void OnClick(View view) {
+        transaction = getSuportFragmentManager().beginTransaction();
+        switch (view.getId()){
+            case R.id.iglesias: transaction.replace(R.id.contRutas,MapsFragent1).commit();
+                break;
+
+            case R.id.historia: transaction.replace(R.id.contRutas,homeFragment).commit();
+                break;
+        }
+
+    }*/
 
 }

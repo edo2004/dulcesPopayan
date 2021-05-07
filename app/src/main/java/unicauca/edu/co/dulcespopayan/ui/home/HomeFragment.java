@@ -1,5 +1,6 @@
 package unicauca.edu.co.dulcespopayan.ui.home;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,17 +11,20 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import unicauca.edu.co.dulcespopayan.R;
-import unicauca.edu.co.dulcespopayan.nav_rutas;
+import unicauca.edu.co.dulcespopayan.OnfragmentInteractionListener;
 
 public class HomeFragment extends Fragment {
 
     Button buton;
+    private OnfragmentInteractionListener mListener;
 
+    public HomeFragment(){
+
+    }
     private HomeViewModel homeViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -29,15 +33,16 @@ public class HomeFragment extends Fragment {
                 new ViewModelProvider(this).get(HomeViewModel.class);
         View root = inflater.inflate(R.layout.fragment_home, container, false);
 
+
         buton = root.findViewById(R.id.button);
         buton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                FragmentTransaction transaction = getChildFragmentManager().beginTransaction();
+                mListener.changeFragment(1);
+                /*FragmentTransaction transaction = getFragmentManager().beginTransaction();
                 transaction.replace(R.id.content,nav_rutas.class,null);
                 transaction.addToBackStack(null);
-                transaction.commit();
+                transaction.commit();*/
 
             }
         });
@@ -50,5 +55,30 @@ public class HomeFragment extends Fragment {
             }
         });
         return root;
+
+
+
     }
+
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        try {
+            mListener = (OnfragmentInteractionListener) activity;
+        } catch (ClassCastException e) {
+            throw new ClassCastException(activity.toString()
+                    + " must implement OnFragmentInteractionListener");
+        }
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        mListener = null;
+
+    }
+
+
+
+
 }
