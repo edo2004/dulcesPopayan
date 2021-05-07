@@ -133,7 +133,7 @@ public class nav_rutas extends Fragment implements OnMapReadyCallback {
         LatLng popayan = new LatLng(2.4416676728872915, -76.60632218499379);
         mMap.addMarker(new MarkerOptions()
                 .position(popayan)
-                .title("Marker in Sydney"));
+                .title("Popayán"));
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(popayan,13));
     }
 

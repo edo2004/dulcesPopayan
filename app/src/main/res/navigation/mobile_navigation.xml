@@ -31,9 +31,9 @@
         android:label="fragment_rutas"
         tools:layout="@layout/fragment_rutas" />
     <fragment
-        android:id="@+id/mapsFragment1"
-        android:name="unicauca.edu.co.dulcespopayan.MapsFragment1"
-        android:label="fragment_maps1"
-        tools:layout="@layout/fragment_maps1" />
+        android:id="@+id/nosotros"
+        android:name="unicauca.edu.co.dulcespopayan.Nosotros"
+        android:label="Nosotros"
+        tools:layout="@layout/fragment_nosotros" />
 
 </navigation>

@@ -89,10 +89,12 @@ public class nav_dulces extends Fragment {
 
     private List<listDulces> getItems(){
         List<listDulces> itemsList = new ArrayList<>();
-        itemsList.add(new listDulces("Manjar blanco", "Estas son las mejores de popayan", R.drawable.iglesia));
-        itemsList.add(new listDulces("Repollitas", "Estas son las mejores de popayan", R.drawable.arte));
-        itemsList.add(new listDulces("Tamales", "Estas son las mejores de popayan", R.drawable.museo));
-        itemsList.add(new listDulces("Agua", "Estas son las mejores de popayan", R.drawable.popayan));
+        itemsList.add(new listDulces("Manjar blanco", "Postre obtenido de una mezcla de azúcar y leche de vaca.", R.drawable.manajrblancoconbreva));
+        itemsList.add(new listDulces("Repollitas", "Todo aquel que va a Popayán sí o sí debe probar las repollitas caucanas.", R.drawable.repollitas));
+        itemsList.add(new listDulces("Aplanchados", "Postre bastante popular que se puede encontrar en cualquier panadería.", R.drawable.aplanchados));
+        itemsList.add(new listDulces("Manjar blanco", "Postre lácteo obtenido de una mezcla de azúcar y leche de vaca.", R.drawable.manajrblancoconbreva));
+        itemsList.add(new listDulces("Repollitas", "Todo aquel que va a Popayán sí o sí debe probar las repollitas caucanas.", R.drawable.repollitas));
+        itemsList.add(new listDulces("Aplanchados", "Postre bastante popular que se puede encontrar en cualquier panadería.", R.drawable.aplanchados));
 
         return itemsList;
     }

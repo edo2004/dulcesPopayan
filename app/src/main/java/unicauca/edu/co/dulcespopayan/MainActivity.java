@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity implements OnfragmentInterac
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_sesion, R.id.nav_register, R.id.nav_dulces,R.id.nav_rutas,R.id.mapsFragment1)
+                R.id.nav_home, R.id.nav_sesion, R.id.nav_register, R.id.nav_dulces,R.id.nav_rutas,R.id.nosotros)
                 .setDrawerLayout(drawer)
                 .build();
         super.onPostResume();
